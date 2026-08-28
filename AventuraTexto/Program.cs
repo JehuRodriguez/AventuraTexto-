@@ -10,6 +10,11 @@ namespace AventuraTexto
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("LA MAZMORRA PERDIDA");
+            Console.WriteLine("Bienvenido Aventurero");
+            Console.WriteLine("Presionar ENTER para salir ");
+
+            Console.ReadLine();
         }
     }
 }
