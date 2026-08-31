@@ -13,7 +13,7 @@ namespace AventuraTexto
 
         public override void Atacar()
         {
-            Console.WriteLine(nombre + "ataca con espada ");
+            Console.WriteLine(nombre + " ataca con espada ");
         }
     }
 }
