@@ -12,7 +12,13 @@ namespace AventuraTexto
         {
             Console.WriteLine("LA MAZMORRA PERDIDA");
             Console.WriteLine("Bienvenido Aventurero");
-            Console.WriteLine("Presionar ENTER para salir ");
+
+            Personaje jugador = new Personaje("Guerrero", 100);
+
+            Console.WriteLine("Nombre " + jugador.nombre);
+            Console.WriteLine("Vida " + jugador.vida);
+
+
 
             Console.ReadLine();
         }
