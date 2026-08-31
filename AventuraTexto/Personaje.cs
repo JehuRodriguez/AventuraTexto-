@@ -18,13 +18,6 @@ namespace AventuraTexto
         {
             Console.WriteLine(nombre + "ataca.");
 
-
-        
-        
-        
-        
         }
-
-
     }
 }

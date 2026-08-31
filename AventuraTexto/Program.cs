@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace AventuraTexto
 {
@@ -13,10 +10,11 @@ namespace AventuraTexto
             Console.WriteLine("LA MAZMORRA PERDIDA");
             Console.WriteLine("Bienvenido Aventurero");
 
-            Personaje jugador = new Personaje("Guerrero", 100);
+            Guerrero guerrero = new Guerrero("Guerrero ", 100);
+            Mago mago = new Mago("Mago ", 80);
 
-            Console.WriteLine("Nombre " + jugador.nombre);
-            Console.WriteLine("Vida " + jugador.vida);
+            guerrero.Atacar();
+            mago.Atacar();
 
 
 
