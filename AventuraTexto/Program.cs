@@ -42,7 +42,40 @@ namespace AventuraTexto
             Console.WriteLine(" Has elegido a " + jugador.nombre);
             jugador.Atacar();
 
+            Console.WriteLine();
+            Console.WriteLine("Has entrado en la mazmorra.");
+            Console.WriteLine("Frente a ti aparecen dos caminos.");
+            Console.WriteLine();
+            Console.WriteLine("1. Camino de la izquierda");
+            Console.WriteLine("2. Camino de la derecha");
+
+            Console.Write("¿Qué camino eliges? ");
+
+            string camino = Console.ReadLine();
+
+            if (camino == "1")
+            {
+                Console.WriteLine();
+                Console.WriteLine("Avanzas por el camino de la izquierda.");
+                Console.WriteLine("Escuchas un ruido extraño...");
+            }
+
+            else if (camino == "2")
+            {
+                Console.WriteLine();
+                Console.WriteLine("Avanzas por el camino de la derecha.");
+                Console.WriteLine("Encuentras una vieja antorcha.");
+            }
+
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Te has perdido en la mazmorra.");
+            }
+
             Console.ReadLine();
         }
     }
 }
+
+
