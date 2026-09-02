@@ -5,7 +5,7 @@ namespace AventuraTexto
 {
     internal class Guerrero : Personaje
     {
-        public Guerrero(string nombre, int vida) : base(nombre,vida)
+        public Guerrero(string nombre, int vida) : base(nombre,vida,20)
         {
 
 

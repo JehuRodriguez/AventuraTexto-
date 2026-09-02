@@ -8,7 +8,7 @@ namespace AventuraTexto
         static void Main(string[] args)
         {
             Console.WriteLine("LA MAZMORRA PERDIDA");
-            Console.WriteLine("Bienvenido Aventurero");
+            Console.WriteLine("Bienvenido aventurero.");
 
             Console.WriteLine();
             Console.WriteLine("Elige tu personaje:");
@@ -25,7 +25,6 @@ namespace AventuraTexto
             {
                 jugador = new Guerrero("Guerrero", 100);
             }
-
             else if (opcion == "2")
             {
                 jugador = new Mago("Mago", 80);
@@ -39,7 +38,7 @@ namespace AventuraTexto
             }
 
             Console.WriteLine();
-            Console.WriteLine(" Has elegido a " + jugador.nombre);
+            Console.WriteLine("Has elegido a " + jugador.nombre);
             jugador.Atacar();
 
             Console.WriteLine();
@@ -67,13 +66,88 @@ namespace AventuraTexto
                 Console.WriteLine("Encuentras una vieja antorcha.");
             }
 
+
             else
             {
                 Console.WriteLine();
                 Console.WriteLine("Te has perdido en la mazmorra.");
+                Console.ReadKey();
+                return;
+            }
+
+            Enemigo enemigo = new Enemigo("Goblin", 60);
+
+            Console.WriteLine();
+            Console.WriteLine("¡Un " + enemigo.nombre + " aparece frente a ti!");
+            Console.WriteLine("Tu vida: " + jugador.vida);
+            Console.WriteLine("Vida del enemigo: " + enemigo.vida);
+
+            Console.WriteLine();
+
+            while (jugador.vida > 0 && enemigo.vida > 0)
+            {
+                Console.WriteLine("¿Qué deseas hacer?");
+                Console.WriteLine("1. Atacar");
+                Console.WriteLine("2. Curarse");
+
+                Console.Write("Elige una opción: ");
+
+                string accion = Console.ReadLine();
+
+
+                if (accion == "1")
+                {
+                    jugador.Atacar();
+                    enemigo.vida = enemigo.vida - jugador.daño;
+
+                    Console.WriteLine("El Goblin tiene " + enemigo.vida + " de vida.");
+                }
+
+                else if (accion == "2")
+                {
+                    jugador.vida = jugador.vida + 10;
+
+                    Console.WriteLine("Te has curado 10 puntos.");
+                    Console.WriteLine("Tu vida: " + jugador.vida);
+                }
+
+                else
+                {
+                    Console.WriteLine("Opción no válida.");
+                    continue;
+                }
+
+                if (enemigo.vida > 0)
+                {
+                    enemigo.Atacar();
+                    jugador.vida = jugador.vida - enemigo.daño;
+
+                    Console.WriteLine("Tu vida: " + jugador.vida);
+                }
+
+                Console.WriteLine();
+            }
+
+            if (jugador.vida <= 0)
+            {
+                Console.WriteLine("El Goblin te ha derrotado.");
+                Console.WriteLine();
+                Console.WriteLine("GAME OVER");
+            }
+
+            else
+            {
+                Console.WriteLine("¡Has derrotado al Goblin!");
+                Console.WriteLine();
+                Console.WriteLine("Has encontrado el tesoro perdido.");
+                Console.WriteLine();
+                Console.WriteLine("================================");
+                Console.WriteLine("        ¡HAS GANADO!");
+                Console.WriteLine("================================");
             }
 
             Console.ReadLine();
+
         }
     }
 }

@@ -5,7 +5,7 @@ namespace AventuraTexto
 {
     internal class Mago : Personaje
     {
-        public Mago(string nombre, int vida) : base(nombre, vida)
+        public Mago(string nombre, int vida) : base(nombre, vida,20)
         {
 
         }
