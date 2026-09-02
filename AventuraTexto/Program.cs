@@ -19,26 +19,28 @@ namespace AventuraTexto
 
             string opcion = Console.ReadLine();
 
+            Personaje jugador;
+
             if (opcion == "1")
             {
-                Guerrero guerrero = new Guerrero("Guerrero", 100);
-
-                Console.WriteLine("Has elegido al Guerrero.");
-                guerrero.Atacar();
+                jugador = new Guerrero("Guerrero", 100);
             }
 
             else if (opcion == "2")
             {
-                Mago mago = new Mago("Mago", 80);
-
-                Console.WriteLine("Has elegido al Mago.");
-                mago.Atacar();
+                jugador = new Mago("Mago", 80);
             }
 
             else
             {
                 Console.WriteLine("Opción no válida.");
+                Console.ReadLine();
+                return;
             }
+
+            Console.WriteLine();
+            Console.WriteLine(" Has elegido a " + jugador.nombre);
+            jugador.Atacar();
 
             Console.ReadLine();
         }
